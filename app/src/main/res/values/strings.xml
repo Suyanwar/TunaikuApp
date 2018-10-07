@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TunaikuApp</string>
+    <string name="popular">Popular</string>
+    <string name="top_rated">Top Rated</string>
+    <string name="movie_title">Movie Title</string>
+    <string name="movie_cover_desc">Movie Cover Description</string>
+    <string name="movie_rate">Movie Rating</string>
+    <string name="default_movie_rate">0.0</string>
+    <string name="max_movie_rate">/10</string>
+    <string name="cta">Buy Ticket</string>
+</resources>
