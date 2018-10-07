@@ -21,6 +21,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.root.tunaikuapp.R;
+import com.example.root.tunaikuapp.main.view.fragment.DetailMovieFragment;
 import com.example.root.tunaikuapp.objects.Movie;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
@@ -68,6 +69,15 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.Movi
 
         @Override
         public void onClick(View view) {
+            Fragment detailFragment = new DetailMovieFragment();
+            Bundle args = new Bundle();
+            args.putString("movie_id", items.get(getPosition()).getId());
+            detailFragment.setArguments(args);
+            FragmentTransaction ft = ((FragmentActivity) ctx).getSupportFragmentManager().beginTransaction();
+            ft.setCustomAnimations(R.anim.enter_from_right, R.anim.exit_to_left, R.anim.enter_from_left, R.anim.exit_to_right);
+            ft.replace(R.id.main_fragment, detailFragment);
+            ft.addToBackStack(null);
+            ft.commit();
         }
     }
 
